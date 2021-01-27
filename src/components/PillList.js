@@ -6,7 +6,7 @@ const PillList = ({ pills, onSearchSubmit }) => {
     return (
       <div
         key={index}
-        className="image-pill bg-gray-100 text-gray-800 text-sm px-1 py-1 inline-block leading-4 truncate mr-2 mt-2 rounded max-w-lg font-semibold"
+        className="image-pill w-full bg-gray-100 text-gray-800 text-sm px-1 py-1 inline-block leading-4 truncate mr-2 mt-2 rounded max-w-lg font-semibold"
       >
         <a
           href="/#"
@@ -22,7 +22,9 @@ const PillList = ({ pills, onSearchSubmit }) => {
   });
   return (
     <div className="pill-list">
-      <div className="flex flex-row mt-2">{pillItems}</div>
+      <div className="grid grid-cols-3 sm:grid-cols-7 gap-4 mt-2">
+        {pillItems}
+      </div>
     </div>
   );
 };

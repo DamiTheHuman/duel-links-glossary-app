@@ -77,10 +77,10 @@ const Vagabond = ({ showIntro, activeCards, onFocusCardSelect }) => {
 
   return (
     <div className="vagabond pb-4 relative">
-      <img src={vagabond} alt="vagabond" className="mx-auto" />
       <div className="char">
-        <div className="chat-bubble p-4 text-xs sm:text-lg">
-          {parseChatMessage(typedOutMessage)}
+        <img src={vagabond} alt="vagabond" className="mx-auto" />
+        <div className="chat-bubble p-4 text-sm sm:text-lg">
+          <div className="chat-text">{parseChatMessage(typedOutMessage)}</div>
           <div className="tag">Vagabond</div>
         </div>
       </div>

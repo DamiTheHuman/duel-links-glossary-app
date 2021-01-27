@@ -53,7 +53,7 @@
   left: 100%;
   top: 50%;
   transform: translate(-50%, -50%);
-  clip-path: inset(-200px 49.5% -200px -200px);
+  clip-path: inset(-200px 49% -200px -200px);
   animation: leftInset 1s;
   animation-delay: 5s;
 }

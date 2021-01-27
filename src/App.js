@@ -125,8 +125,9 @@ function App() {
 
   return (
     <div className="App">
-      <MainHeader />
       <Intro showIntro={showIntro} setShowIntro={setShowIntro} />
+      <MainHeader />
+
       <Modal
         content={<CardLayout card={randomCard} showCard={showCard} />}
         showModal={showModal}

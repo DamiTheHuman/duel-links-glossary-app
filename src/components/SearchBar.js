@@ -18,7 +18,7 @@ const SearchBar = ({ onSearchSubmit, onRandomSubmit }) => {
   };
   return (
     <div className="search-bar">
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid sm:grid-cols-4 grid-cols-2 gap-4">
         <div className="col-span-2">
           <form onSubmit={onCardSearchSubmit}>
             <div className="search-input bg-white rounded shadow flex bg-gray-100">
