@@ -1,0 +1,13 @@
+.pagination .active {
+  background-color: #ef4444;
+  color: white;
+}
+
+.pagination-pill {
+  transition: 0.5s;
+}
+
+.pagination .pagination-pill:hover {
+  color: white;
+  background-color: black;
+}

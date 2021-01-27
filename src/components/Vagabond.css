@@ -1,0 +1,65 @@
+.vagabond .char {
+  opacity: 0.85;
+}
+.vagabond .chat-bubble {
+  position: absolute;
+  height: 46%;
+  width: 100%;
+  color: white;
+  background: #060c21;
+  border: 1px solid #000;
+  min-height: 100px;
+  top: 50%;
+}
+
+.vagabond .chat-bubble::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #fff;
+  transform: skew(178deg, 179deg);
+  z-index: -1;
+  background: linear-gradient(315deg, #e91e63, #5d02ff);
+}
+
+.vagabond .chat-bubble .tag {
+  padding: 4px;
+  position: absolute;
+  background: #060c21;
+  border: 1px solid #000;
+  top: -20%;
+  left: -1px;
+  z-index: auto;
+}
+.vagabond .chat-bubble .tag::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  transform: skew(2deg, 2deg);
+  z-index: -1;
+  background: linear-gradient(315deg, #ff0057, #e64a19);
+}
+
+.vagabond .chat-bubble .tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.vagabond .chat-bubble span {
+  color: #ddd;
+  font-style: italic;
+  text-decoration: underline;
+}

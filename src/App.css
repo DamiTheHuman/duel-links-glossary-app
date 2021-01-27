@@ -1,0 +1,68 @@
+.main-header .header-logo {
+  width: 50px;
+  height: 100%;
+  transition: 1s;
+  transform: rotate(0deg);
+}
+.main-header {
+  z-index: 10;
+}
+
+.main-header .header-logo:hover {
+  transform: rotate(180deg);
+}
+
+.search-input img {
+  width: 100%;
+  max-width: 20px;
+}
+
+.card-list .card {
+  background: url("./assets/images/card-sleeve.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition: transform 0.5s;
+}
+
+.card-list .card:hover {
+  transform: translate(0px, -10px);
+}
+.card-list .card.focus-card {
+  box-shadow: 0 0 1px #fff, 0 0 2.5px #fff, 0 0 5px #0ba9ca, 0 0 7.5px #0ba9ca,
+    0 0 10px #0ba9ca, 0 0 12.5px #0ba9ca;
+  animation: float 5s;
+  animation-iteration-count: 2;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, 3px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.card-detail {
+  text-transform: capitalize;
+}
+
+.image-pill {
+  width: 60px;
+  transition: 0.5s;
+}
+
+.image-pill:hover {
+  transform: scale(1.1);
+  background-color: #bdf6f8;
+}
+
+.center-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
