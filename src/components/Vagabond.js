@@ -4,6 +4,8 @@ import vagabond from "../assets/images/vagabond.png";
 import vagabondMessageAPI from "../api/vagabondMessageAPI";
 
 const Vagabond = ({ showIntro, activeCards, onFocusCardSelect }) => {
+  /** The previous active cards used to check if the active cards really changed */
+  const [prevActiveCards, setPrevActiveCards] = useState(activeCards);
   /** The current action of the vagabond which effects the type of message to be displayed */
   const [action, setAction] = useState(0);
   /** The topic card the vagabond takes notice too */
@@ -17,11 +19,16 @@ const Vagabond = ({ showIntro, activeCards, onFocusCardSelect }) => {
 
   useEffect(() => {
     if (activeCards.length > 0) {
-      setAction(1);
-      setTopicCard(activeCards[Math.floor(Math.random() * activeCards.length)]);
-      setMessage("");
+      if (!arraysEquals(prevActiveCards, activeCards)) {
+        setAction(1);
+        setTopicCard(
+          activeCards[Math.floor(Math.random() * activeCards.length)]
+        );
+        setMessage("");
+        setPrevActiveCards(activeCards);
+      }
     }
-  }, [activeCards]);
+  }, [activeCards, prevActiveCards]);
 
   useEffect(() => {
     if (!showIntro) {
@@ -43,6 +50,24 @@ const Vagabond = ({ showIntro, activeCards, onFocusCardSelect }) => {
       clearInterval(interval); //Clear interval to avoid memory leaks
     };
   }, [typedOutMessage, message]);
+  /**
+   * Checks if two arrays have the same content
+   * @param a the first array object to check against
+   * @param a the second array object to check to
+   */
+  const arraysEquals = (a, b) => {
+    if (a === b) return true;
+    if (a == null || b == null) return false;
+    if (a.length !== b.length) return false;
+
+    for (var i = 0; i < a.length; ++i) {
+      if (a[i].id !== b[i].id) {
+        return false;
+      }
+    }
+    return true;
+  };
+
   /**
    * Displays the message set to the user while further parsing its content
    * @param message The message to be dispayed to the user
@@ -77,11 +102,13 @@ const Vagabond = ({ showIntro, activeCards, onFocusCardSelect }) => {
 
   return (
     <div className="vagabond pb-4 relative">
-      <div className="char">
+      <div className="chat-box">
         <img src={vagabond} alt="vagabond" className="mx-auto" />
-        <div className="chat-bubble p-4 text-sm sm:text-lg">
-          <div className="chat-text">{parseChatMessage(typedOutMessage)}</div>
-          <div className="tag">Vagabond</div>
+        <div className="box">
+          <div className="chat-bubble p-4 text-sm sm:text-lg">
+            <div className="chat-text">{parseChatMessage(typedOutMessage)}</div>
+            <div className="tag">Vagabond</div>
+          </div>
         </div>
       </div>
     </div>

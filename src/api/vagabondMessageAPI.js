@@ -2,26 +2,26 @@
 const message = (action, topicCard) => {
   switch (action) {
     case 0:
-      return "Welcome to the Yu-gi-oh-pedia! You can search for any card within duel links realm. Feel free to use the search box or the character icons below to help jumpstart your quest for the best cards.";
+      return "Welcome to the Duel Links Glossary! You can search for any card within Duel Links realm. Feel free to use the search box or the character icons below to help jumpstart your quest for the best cards.";
     case 1:
       if (topicCard.race === "Divine-Beast") {
         return `This is the legendary | ${topicCard.name} |! `;
       }
       if (topicCard.type === "Normal Monster") {
-        return `Eh, Vanilla Monsters  dont get enough love isnt that right | ${topicCard.name} | `;
+        return `Eh, Vanilla Monsters dont get enough love but | ${topicCard.name} | might be just what you need`;
       } else if (topicCard.type === "Effect Monster") {
-        return `Thats an intresting effect | ${topicCard.name} | has it might be nice to have.`;
+        return `Effect monsters are great for suprising your opponent | ${topicCard.name} | might be what you need to turn the tides in your favour.`;
+      } else if (topicCard.type === "Fusion Monster") {
+        return `These type of cards usually need special cards or effect to bring is it worth it for the power of  | ${topicCard.name} |?`;
       } else if (
-        topicCard.type === "Fusion Monster" ||
+        topicCard.type === "Ritual Monster" ||
         topicCard.type === "Ritual Effect Monster"
       ) {
-        return `This card | ${topicCard.name} | is a fusion so it requires multiple cards to summon but is it worth it?`;
-      } else if (topicCard.type === "Ritual Monster") {
         return `This is a ritual monsters offer your other monsters to unleash | ${topicCard.name} |!`;
       } else if (topicCard.type === "Toon Monster") {
-        return `Use toon world to unlock these cards | ${topicCard.name} | true potential! `;
+        return `Use toon world to unlock the power of the menacing caricature | ${topicCard.name} |! `;
       } else if (topicCard.type === "Synchro Monster") {
-        return `Use the power of Synchro Summoning to bring out | ${topicCard.name} |! `;
+        return `With the help of tuners and monster cards you can bring out | ${topicCard.name} |! Through the power of Synchro Sumooning. `;
       } else if (topicCard.type === "XYZ Monster") {
         return `Use multiple cards of the same levels to bring out | ${topicCard.name} |! `;
       } else if (topicCard.type === "Link Monster") {

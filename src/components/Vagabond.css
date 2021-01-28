@@ -1,5 +1,6 @@
-.vagabond .char {
+.vagabond .chat-box .box {
   opacity: 0.85;
+  visibility: visible;
 }
 .vagabond .chat-bubble {
   position: absolute;
@@ -59,7 +60,7 @@
 }
 
 .vagabond .chat-bubble .chat-text {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 100%;
 }
 

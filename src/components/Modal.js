@@ -29,7 +29,7 @@ const Modal = ({ content, showModal, setShowModal }) => {
   return (
     <React.Fragment>
       <div id="myModal" className="modal">
-        <div ref={ref} className="modal-content">
+        <div ref={ref} className="modal-content sm:w-9/12 w-11/12">
           <div className="modal-header flex flex-row-reverse">
             <span
               className="close mr-4"
